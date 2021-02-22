@@ -91,3 +91,7 @@ sw.*
 
 # VSCode
 .vscode/*
+
+# @nuxtjs/google-fonts
+src/assets/css/fonts.css
+src/assets/fonts/*

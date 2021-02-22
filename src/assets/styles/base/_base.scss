@@ -4,7 +4,7 @@ html {
 
 body {
     font-family: $font-family-default;
-    color: $color_black;
+    color: var(--color-black);
     font-size: 1.6em;
     font-weight: 500;
     word-spacing: 1px;
@@ -19,7 +19,8 @@ body {
     -webkit-print-color-adjust: exact;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    overscroll-behavior: none;
+    // overscroll-behavior: none;
+    background: var(--color-light-black);
 }
 
 img {
@@ -51,6 +52,7 @@ a:hover,
 a:visited {
     outline: none;
     text-decoration: none;
+    color: var(--color-link);
 }
 
 button {
@@ -63,28 +65,24 @@ button {
 }
 
 ::selection {
-    background-color: $color-black;
-    color: $color-white;
-}
-
-.wrapper {
-    width: 100%;
-    overflow: hidden;
+    background-color: var(--color-black);
+    color: var(--color-white);
 }
 
 .disnone {
     display: none;
 }
 
-.sp {
+.sp-onlu {
     display: none;
-}
 
-@include mq-mobile {
-    .sp {
+    @include mq-mobile {
         display: block;
     }
-    .pc {
+}
+
+.pc-only {
+    @include mq-mobile {
         display: none;
     }
 }

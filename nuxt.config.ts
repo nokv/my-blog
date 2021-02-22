@@ -10,8 +10,8 @@ const environment = process.env.NODE_ENV || 'development';
 const isDev = environment === 'development';
 
 // meta
-const title = '';
-const description = '';
+const title = 'Naoki Takahashi blog';
+const description = 'Naoki Takahashi blog';
 
 const config: NuxtConfig = {
     // Nuxt target (https://nuxtjs.org/api/configuration-target)
@@ -36,6 +36,7 @@ const config: NuxtConfig = {
             prefix: 'og: http://ogp.me/ns#',
         },
         title,
+        titleTemplate: `%s | ${title}`,
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -75,11 +76,10 @@ const config: NuxtConfig = {
 
     styleResources: {
         scss: [
-            '~/assets/styles/modules/_fluid_style.scss',
+            '~/assets/styles/function/_fluid_style.scss',
             '~/assets/styles/base/_variables.scss',
             '~/assets/styles/base/_variables_easing.scss',
-            '~/assets/styles/modules/_mixin_mq.scss',
-            '~/assets/styles/modules/_utils.scss',
+            '~/assets/styles/function/_mixin_mq.scss',
         ],
     },
 
@@ -87,7 +87,7 @@ const config: NuxtConfig = {
     plugins: [],
 
     // Auto import components (https://go.nuxtjs.dev/config-components)
-    components: true,
+    components: false,
 
     // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
     buildModules: [
@@ -98,6 +98,7 @@ const config: NuxtConfig = {
                 filename: `../env/.env.${environment}`,
             },
         ],
+        '@nuxtjs/google-fonts',
     ],
     serverMiddleware: [],
 
@@ -106,7 +107,27 @@ const config: NuxtConfig = {
         // https://go.nuxtjs.dev/pwa
         '@nuxtjs/pwa',
         '@nuxtjs/style-resources',
+        '@nuxt/content',
     ],
+
+    googleFonts: {
+        families: {
+            'Noto+Sans+JP': {
+                wght: [400],
+            },
+        },
+        display: 'swap',
+        download: true,
+        inject: true,
+    },
+
+    content: {
+        markdown: {
+            prism: {
+                theme: 'prism-themes/themes/prism-nord.css',
+            },
+        },
+    },
 
     // PWA config
     pwa: {
@@ -115,11 +136,11 @@ const config: NuxtConfig = {
             runtimeCaching: [
                 {
                     urlPattern: '^https://fonts.(?:googleapis|gstatic).com/(.*)',
-                    handler: 'cacheFirst',
+                    handler: 'CacheFirst',
                 },
                 {
                     urlPattern: process.env.URL_BASE || '' + '.*',
-                    handler: 'staleWhileRevalidate',
+                    handler: 'StaleWhileRevalidate',
                     strategyOptions: {
                         cacheName: 'my-cache',
                         cacheExpiration: {
@@ -132,10 +153,7 @@ const config: NuxtConfig = {
         manifest: {
             name: title,
             short_name: title,
-            title,
-            'og:title': title,
             description,
-            'og:description': description,
             theme_color: '#ffffff',
             background_color: '#ffffff',
             lang: 'ja',
@@ -159,7 +177,6 @@ const config: NuxtConfig = {
          */
         extend(config) {
             config.devtool = !isDev ? false : 'source-map';
-            config.mode = isDev ? 'development' : 'production';
         },
         loaders: {
             scss: {
@@ -184,11 +201,6 @@ const config: NuxtConfig = {
             },
         },
         postcss: {
-            plugins: {
-                'postcss-css-variables': {
-                    preserve: true,
-                },
-            },
             preset: {
                 autoprefixer: {
                     grid: 'autoplace',
