@@ -9,13 +9,13 @@
             <nav class="header__nav">
                 <ul class="header__link-list">
                     <li class="header__link-item">
-                        <nuxt-link to="/" class="header__link">top</nuxt-link>
+                        <nuxt-link :to="Routes.HOME" class="header__link">top</nuxt-link>
                     </li>
                     <li class="header__link-item">
-                        <nuxt-link to="/about/" class="header__link">about</nuxt-link>
+                        <nuxt-link :to="Routes.ABOUT" class="header__link">about</nuxt-link>
                     </li>
                     <li class="header__link-item">
-                        <nuxt-link to="/posts/search/" class="header__link">search</nuxt-link>
+                        <nuxt-link :to="Routes.POST_SEARCH" class="header__link">search</nuxt-link>
                     </li>
                 </ul>
             </nav>
@@ -25,8 +25,15 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { Routes } from '~/types/route-type';
 
-export default Vue.extend({});
+export default Vue.extend({
+    data() {
+        return {
+            Routes,
+        };
+    },
+});
 </script>
 
 <style lang="scss" scoped>
