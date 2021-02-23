@@ -8,6 +8,14 @@
         margin: 0 auto;
     }
 
+    &__title {
+        font-size: var(--font-size-h1);
+        font-weight: 700;
+    }
+    &__date {
+        color: var(--color-light-gray);
+    }
+
     &__body {
         width: 100%;
         max-width: var(--content-max-width);

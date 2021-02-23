@@ -1,6 +1,6 @@
 .posts {
     width: 100%;
-    max-width: var(--content-max-width);
+    max-width: calc(var(--content-max-width) * 0.93); // 700: 650
     margin: 0 auto;
     display: grid;
     grid-template-rows: auto;

@@ -1,7 +1,7 @@
 <template>
     <article class="post">
         <header class="post__header">
-            <h1>{{ post.title }}</h1>
+            <h1 class="post__title">{{ post.title }}</h1>
             <time class="post__date" :datetime="post.date">{{ formatDate(post.date) }}</time>
         </header>
 
