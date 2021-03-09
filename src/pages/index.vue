@@ -1,6 +1,6 @@
 <template>
     <div class="p-index">
-        <section class="p-posts">
+        <section class="s-posts">
             <ThePosts :posts="posts" />
         </section>
     </div>

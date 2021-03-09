@@ -1,19 +1,6 @@
 ---
 title: Test
-date: 2021-01-11
----
-
----
-
-**Advertisement :)**
-
--   **[pica](https://nodeca.github.io/pica/demo/)** - high quality and fast image
-    resize in browser.
--   **[babelfish](https://github.com/nodeca/babelfish/)** - developer friendly
-    i18n with plurals support and easy syntax.
-
-You will like those projects!
-
+date: 2020-11-14
 ---
 
 # h1 Heading 8-)
@@ -139,11 +126,11 @@ Right aligned columns
 
 ## Links
 
-[link text](http://dev.nodeca.com)
+[link text](http://github.com)
 
-[link with title](http://nodeca.github.io/pica/demo/ 'title text!')
+[link with title](http://github.com 'title text!')
 
-Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
+Autoconverted link https://github.com (enable linkify to see)
 
 ## Images
 

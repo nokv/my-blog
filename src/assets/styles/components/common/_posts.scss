@@ -5,5 +5,5 @@
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: 100%;
-    gap: 25px;
+    gap: var(--spacing-3);
 }

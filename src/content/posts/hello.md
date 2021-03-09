@@ -1,8 +1,6 @@
 ---
-title: hello world
-date: 2021-01-01
+title: Hello world
+date: 2020-11-21
 ---
 
-# Hello world
-
-hi
+Hello world

@@ -52,7 +52,7 @@ a:hover,
 a:visited {
     outline: none;
     text-decoration: none;
-    color: var(--color-link);
+    color: inherit;
 }
 
 button {

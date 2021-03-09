@@ -1,10 +1,16 @@
 import { Route } from 'vue-router';
+import { Routes } from '~/types/route-type';
 
-export const createRouteWithParams = (Route: Partial<Route>, Params: Route['params']): Partial<Route> => {
+export const getRouteWithParams = <T extends Partial<Route>>(
+    routeName: keyof typeof Routes,
+    params: T['params']
+): Partial<Route> => {
+    const Route = Routes[routeName];
+
     return {
         ...Route,
         params: {
-            ...Params,
+            ...params,
         },
     };
 };

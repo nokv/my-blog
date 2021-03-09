@@ -1,11 +1,13 @@
+@use '../../function/link';
+
 .header {
     width: 100%;
 
     &__inner {
         width: 100%;
         max-width: var(--content-max-width);
-        margin: 0 auto 55px;
-        padding: 30px 0;
+        margin: 0 auto var(--spacing-5);
+        padding: var(--spacing-4) 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -27,7 +29,7 @@
         display: grid;
         grid-template-rows: repeat(1, auto);
         grid-template-columns: repeat(3, auto);
-        gap: 20px;
+        gap: var(--spacing-2);
         margin: 0px;
     }
     &__link-item {
@@ -35,5 +37,8 @@
     }
     &__link {
         font-size: 1.6rem;
+        padding: 0.5rem;
+
+        @include link.hover-link();
     }
 }

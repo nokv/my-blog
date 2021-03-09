@@ -17,7 +17,9 @@ $font-family-default: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe 
 :root {
     // Layout Sizes
     --base-size: #{$base-size-pc};
+    --content-width: calc(100% - 32px);
     --content-max-width: 700px;
+    --text-max-width: 700px;
     --header-height: 70px;
 
     // Font Sizes
@@ -25,18 +27,30 @@ $font-family-default: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe 
     --font-size-h2: 2.2rem;
     --font-size-h3: 1.9rem;
 
+    $spacing-unit: 0.8rem;
+    --spacing-1: #{$spacing-unit * 1};
+    --spacing-2: #{$spacing-unit * 2};
+    --spacing-3: #{$spacing-unit * 3};
+    --spacing-4: #{$spacing-unit * 5};
+    --spacing-5: #{$spacing-unit * 8};
+    --spacing-6: #{$spacing-unit * 13};
+
     // Colors
     --color-black: #000000;
     --color-light-black: #212121;
     --color-lighten-black: #2f2f33;
     --color-white: #ffffff;
+    --color-blue: #004cab;
     --color-gray: #f5f5f5;
     --color-light-gray: #999;
     --color-dark-gray: #718096;
-    --color-link: var(--color-black);
+    --color-link: var(--color-blue);
 
     // z-index
     --z-header: 100;
+
+    // Easing
+    --easing-link: cubic-bezier(0.82, 0, 0.12, 1);
 
     @include mq-mobile {
         --base-size: #{$base-size-sp};
