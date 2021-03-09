@@ -4,13 +4,12 @@
 
     &__header {
         width: 100%;
-        max-width: var(--content-max-width);
-        margin: 0 auto 3rem;
+        margin: 0 0 var(--spacing-3);
     }
 
     &__title {
         font-size: var(--font-size-h1);
-        font-weight: 700;
+        font-weight: bold;
     }
     &__date {
         color: var(--color-light-gray);
@@ -18,7 +17,5 @@
 
     &__body {
         width: 100%;
-        max-width: var(--content-max-width);
-        margin: 0 auto;
     }
 }

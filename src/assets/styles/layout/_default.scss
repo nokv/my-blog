@@ -9,4 +9,7 @@
 
 .main {
     width: 100%;
+    max-width: var(--content-max-width);
+    padding: 0 var(--grid-margin);
+    margin: 0 auto;
 }

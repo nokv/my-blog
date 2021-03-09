@@ -7,10 +7,15 @@
         width: 100%;
         max-width: var(--content-max-width);
         margin: 0 auto var(--spacing-5);
-        padding: var(--spacing-4) 0;
+        padding: var(--spacing-4) var(--grid-margin);
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
+
+        @include mq-mobile {
+            margin: 0 auto var(--spacing-3);
+        }
     }
     &__aside {
         width: auto;
@@ -19,8 +24,12 @@
         width: auto;
     }
     &__title-link {
-        font-weight: 700;
         font-size: 2rem;
+        font-weight: normal;
+
+        @include mq-mobile {
+            font-size: 1.8rem;
+        }
     }
     &__nav {
         width: auto;
@@ -31,6 +40,10 @@
         grid-template-columns: repeat(3, auto);
         gap: var(--spacing-2);
         margin: 0px;
+
+        @include mq-mobile {
+            gap: var(--spacing-1);
+        }
     }
     &__link-item {
         position: relative;
@@ -40,5 +53,9 @@
         padding: 0.5rem;
 
         @include link.hover-link();
+
+        @include mq-mobile {
+            font-size: 1.8rem;
+        }
     }
 }

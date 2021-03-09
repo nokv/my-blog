@@ -21,6 +21,8 @@ body {
     -webkit-font-smoothing: antialiased;
     // overscroll-behavior: none;
     background: var(--color-light-black);
+    font-kerning: none;
+    font-feature-settings: normal;
 }
 
 img {

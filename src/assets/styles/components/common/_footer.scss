@@ -1,13 +1,12 @@
 .footer {
     width: 100%;
-    // background-color: var(--color-light-black);
-    margin: 60px 0 0;
+    margin: var(--spacing-5) 0 0;
 
     &__inner {
         width: 100%;
         max-width: var(--content-max-width);
         margin: 0 auto;
-        padding: 20px 0;
+        padding: var(--spacing-3) var(--grid-margin);
     }
 
     &__body {

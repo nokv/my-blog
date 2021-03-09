@@ -1,3 +1,5 @@
+@use '../../function/link';
+
 .post-card {
     width: 100%;
 
@@ -7,8 +9,13 @@
     }
     &__link {
         width: 100%;
+        display: block;
     }
     &__title {
+        display: inline-block;
         font-size: var(--font-size-h3);
+        font-weight: normal;
+
+        @include link.hover-link();
     }
 }

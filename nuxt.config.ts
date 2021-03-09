@@ -113,7 +113,7 @@ const config: NuxtConfig = {
     googleFonts: {
         families: {
             'Noto+Sans+JP': {
-                wght: [400],
+                wght: [400, 700],
             },
         },
         display: 'swap',

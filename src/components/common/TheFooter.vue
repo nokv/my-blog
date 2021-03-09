@@ -3,7 +3,7 @@
         <div class="footer__inner">
             <div class="footer__body">
                 <p class="footer__cr">
-                    <small>© 2021 Naoki Takahashi</small>
+                    <small>&copy; 2021 Naoki Takahashi</small>
                 </p>
             </div>
         </div>

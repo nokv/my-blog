@@ -18,14 +18,20 @@ $font-family-default: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe 
     // Layout Sizes
     --base-size: #{$base-size-pc};
     --content-width: calc(100% - 32px);
-    --content-max-width: 700px;
+    --content-max-width: calc(700px + var(--grid-margin) * 2);
     --text-max-width: 700px;
     --header-height: 70px;
+    --grid-margin: 3.2rem;
 
     // Font Sizes
-    --font-size-h1: 2.6rem;
-    --font-size-h2: 2.2rem;
-    --font-size-h3: 1.9rem;
+    --font-size-h1: 4.2rem;
+    --font-size-h2: 2.5rem;
+    --font-size-h3: 2rem;
+    // --font-size-h1: 2.6rem;
+    // --font-size-h2: 2.2rem;
+    // --font-size-h3: 1.9rem;
+    --font-size-body: 1.6rem;
+    // --font-size-body-small: calc(18 / 16 * 1rem);
 
     $spacing-unit: 0.8rem;
     --spacing-1: #{$spacing-unit * 1};
@@ -45,6 +51,7 @@ $font-family-default: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe 
     --color-light-gray: #999;
     --color-dark-gray: #718096;
     --color-link: var(--color-blue);
+    --color-link-underline: var(--color-blue);
 
     // z-index
     --z-header: 100;
@@ -54,6 +61,7 @@ $font-family-default: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe 
 
     @include mq-mobile {
         --base-size: #{$base-size-sp};
-        --content-max-width: 344;
+        --grid-margin: 1.6rem;
+        --content-max-width: 51.2rem;
     }
 }
