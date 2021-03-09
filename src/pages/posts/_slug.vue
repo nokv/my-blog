@@ -46,7 +46,7 @@ export default Vue.extend({
     },
     methods: {
         formatDate(date: string): string {
-            return new Date(date).toLocaleDateString('ja');
+            return new Date(date).toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric' });
         },
     },
 });
