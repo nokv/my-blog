@@ -108,7 +108,12 @@ const config: NuxtConfig = {
         '@nuxtjs/pwa',
         '@nuxtjs/style-resources',
         '@nuxt/content',
+        '@nuxtjs/gtm',
     ],
+
+    gtm: {
+        id: 'GTM-PZHTZ9N',
+    },
 
     googleFonts: {
         families: {
