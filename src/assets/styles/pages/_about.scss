@@ -1,3 +1,5 @@
+@use '../function/link';
+
 .p-about {
     width: 100%;
     max-width: var(--content-max-width);
@@ -5,9 +7,23 @@
 }
 
 .about-me {
-    margin: 0 0 40px;
+    margin: 0 0 var(--spacing-4);
 }
 
 .sns {
-    margin: 0 0 40px;
+    margin: 0 0 var(--spacing-4);
+    &__list {
+        width: auto;
+    }
+    &__item {
+        width: auto;
+        display: flex;
+    }
+    &__name {
+        margin: 0 0.7rem 0 0;
+    }
+    &__link {
+        color: var(--color-link);
+        @include link.hover-link();
+    }
 }

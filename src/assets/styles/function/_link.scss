@@ -1,4 +1,5 @@
 @mixin hover-link($borderColor: currentColor) {
+    position: relative;
     &::before {
         content: '';
         position: absolute;
