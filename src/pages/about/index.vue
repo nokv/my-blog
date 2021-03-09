@@ -32,8 +32,16 @@ export default Vue.extend({
         return {};
     },
     head() {
+        const title = 'About';
+        const url = process.env.URL + this.$route.path;
+
         return {
-            titleTemplate: 'ABOUT',
+            title,
+            meta: [
+                { hid: 'og:title', property: 'og:title', content: title },
+                { hid: 'og:url', property: 'og:url', content: url },
+            ],
+            link: [{ hid: 'canonical', rel: 'canonical', href: url }],
         };
     },
 });

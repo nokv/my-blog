@@ -23,22 +23,25 @@ export default Vue.extend({
     },
     data(): {
         post: PostType;
-        meta: {
-            title: string;
-        };
     } {
         return {
             post: null,
-            meta: {
-                title: '',
-            },
         };
     },
     head() {
-        const title = this.$data.post.title;
+        const title: string = this.$data.post.title;
+        const description: string = this.$data.post.description;
+        const url = process.env.URL + this.$route.path;
 
         return {
             title,
+            meta: [
+                { hid: 'description', name: 'description', content: description },
+                { hid: 'og:title', property: 'og:title', content: title },
+                { hid: 'og:description', property: 'og:description', content: description },
+                { hid: 'og:url', property: 'og:url', content: url },
+            ],
+            link: [{ hid: 'canonical', rel: 'canonical', href: url }],
         };
     },
     methods: {
