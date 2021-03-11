@@ -38,9 +38,8 @@ const config: NuxtConfig = {
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+            { httpEquiv: 'X-UA-Compatible', content: 'ie=edge' },
             { hid: 'description', name: 'description', content: description },
-            // @ts-ignore
-            { hid: 'X-UA-Compatible', 'http-equiv': 'X-UA-Compatible', content: 'ie=edge' },
             { hid: 'og:type', property: 'og:type', content: 'website' },
             { hid: 'og:locale', property: 'og:locale', content: 'ja_JP' },
             { hid: 'og:url', property: 'og:url', content: `${process.env.URL}` },
