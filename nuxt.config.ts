@@ -37,29 +37,63 @@ const config: NuxtConfig = {
         titleTemplate: `%s | ${title}`,
         meta: [
             { charset: 'utf-8' },
-            { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+            {
+                name: 'viewport',
+                content: 'width=device-width, initial-scale=1',
+            },
             { httpEquiv: 'X-UA-Compatible', content: 'ie=edge' },
             { hid: 'description', name: 'description', content: description },
             { hid: 'og:type', property: 'og:type', content: 'website' },
             { hid: 'og:locale', property: 'og:locale', content: 'ja_JP' },
-            { hid: 'og:url', property: 'og:url', content: `${process.env.URL}` },
-            { hid: 'og:image', property: 'og:image', content: `${process.env.URL}/icon.png` },
+            {
+                hid: 'og:url',
+                property: 'og:url',
+                content: `${process.env.URL}`,
+            },
+            {
+                hid: 'og:image',
+                property: 'og:image',
+                content: `${process.env.URL}/icon.png`,
+            },
             { hid: 'og:site_name', property: 'og:site_name', content: title },
             { hid: 'og:title', property: 'og:title', content: title },
-            { hid: 'og:description', property: 'og:description', content: description },
-            { hid: 'twitter:card', property: 'twitter:card', content: 'summary' },
+            {
+                hid: 'og:description',
+                property: 'og:description',
+                content: description,
+            },
+            {
+                hid: 'twitter:card',
+                property: 'twitter:card',
+                content: 'summary',
+            },
             { hid: 'twitter:site', property: 'twitter:site', content: '@' },
-            { hid: 'twitter:creator', property: 'twitter:creator', content: '@' },
-            { hid: 'google-site-verification', name: 'google-site-verification', content: '' },
+            {
+                hid: 'twitter:creator',
+                property: 'twitter:creator',
+                content: '@',
+            },
+            {
+                hid: 'google-site-verification',
+                name: 'google-site-verification',
+                content: '',
+            },
             { property: 'apple-mobile-web-app-title', content: title },
             { property: 'application-name', content: title },
             { property: 'msapplication-TileColor', content: '#ffffff' },
             { property: 'theme-color', content: '#ffffff' },
             { name: 'apple-mobile-web-app-capable', content: 'yes' },
-            { name: 'apple-mobile-web-app-status-bar-style', content: 'default' },
+            {
+                name: 'apple-mobile-web-app-status-bar-style',
+                content: 'default',
+            },
         ],
         link: [
-            { rel: 'icon', type: 'image/x-icon', href: `${process.env.URL_BASE}/favicon.ico` },
+            {
+                rel: 'icon',
+                type: 'image/x-icon',
+                href: `${process.env.URL_BASE}/favicon.ico`,
+            },
             { hid: 'canonical', rel: 'canonical', href: process.env.URL },
         ],
         script: [],
@@ -137,7 +171,8 @@ const config: NuxtConfig = {
             dev: false,
             runtimeCaching: [
                 {
-                    urlPattern: '^https://fonts.(?:googleapis|gstatic).com/(.*)',
+                    urlPattern:
+                        '^https://fonts.(?:googleapis|gstatic).com/(.*)',
                     handler: 'CacheFirst',
                 },
                 {
@@ -167,12 +202,27 @@ const config: NuxtConfig = {
     // Build Configuration (https://go.nuxtjs.dev/config-build)
     build: {
         filenames: {
-            app: () => (!isDev ? '[name].[chunkhash:7].js' : '[name].js'),
-            chunk: () => (!isDev ? '[name].[chunkhash:7].js' : '[name].js'),
-            css: () => (!isDev ? '[name].[chunkhash:7].js' : '[name].js'),
-            img: () => (!isDev ? '[path][name].[contenthash:7].[ext]' : '[path][name].[ext]'),
-            font: () => (!isDev ? '[path][name].[contenthash:7].[ext]' : '[path][name].[ext]'),
-            video: () => (!isDev ? '[path][name].[contenthash:7].[ext]' : '[path][name].[ext]'),
+            app: ({ isModern }) =>
+                isDev
+                    ? `[name]${isModern ? '.modern' : ''}.js`
+                    : `[name]${isModern ? '.modern' : ''}.[contenthash:7].js`,
+            chunk: ({ isModern }) =>
+                isDev
+                    ? `[name]${isModern ? '.modern' : ''}.js`
+                    : `[name]${isModern ? '.modern' : ''}.[contenthash:7].js`,
+            css: () => (isDev ? '[name].css' : '[name].[contenthash:7].css'),
+            img: () =>
+                isDev
+                    ? '[path][name].[ext]'
+                    : '[path][name].[contenthash:7].[ext]',
+            font: () =>
+                isDev
+                    ? '[path][name].[ext]'
+                    : '[path][name].[contenthash:7].[ext]',
+            video: () =>
+                isDev
+                    ? '[path][name].[ext]'
+                    : '[path][name].[contenthash:7].[ext]',
         },
         /*
          ** You can extend webpack config here
