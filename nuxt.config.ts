@@ -232,6 +232,7 @@ const config: NuxtConfig = {
         },
         loaders: {
             scss: {
+                // @ts-ignore
                 implementation: Sass,
                 sassOptions: {
                     fiber: Fiber,
@@ -246,7 +247,7 @@ const config: NuxtConfig = {
                         {
                             buildTarget: isServer ? 'server' : 'client',
                             useBuiltIns: 'usage',
-                            corejs: { version: '3.8' },
+                            corejs: { version: '3.9' },
                         },
                     ],
                 ];
