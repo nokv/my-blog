@@ -11,7 +11,7 @@ const isDev = environment === 'development';
 
 // meta
 const title = 'Naoki Takahashi blog';
-const description = 'Naoki Takahashi blog';
+const description = '';
 
 const config: NuxtConfig = {
     // Nuxt target (https://nuxtjs.org/api/configuration-target)
@@ -25,9 +25,7 @@ const config: NuxtConfig = {
     router: {
         base: process.env.URL_BASE || '',
     },
-    render: {
-        crossorigin: 'use-credentials',
-    },
+    render: {},
 
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
@@ -46,11 +44,11 @@ const config: NuxtConfig = {
             { hid: 'og:type', property: 'og:type', content: 'website' },
             { hid: 'og:locale', property: 'og:locale', content: 'ja_JP' },
             { hid: 'og:url', property: 'og:url', content: `${process.env.URL}` },
-            { hid: 'og:image', property: 'og:image', content: `${process.env.URL}/img/ogp.jpg` },
+            { hid: 'og:image', property: 'og:image', content: `${process.env.URL}/icon.png` },
             { hid: 'og:site_name', property: 'og:site_name', content: title },
             { hid: 'og:title', property: 'og:title', content: title },
             { hid: 'og:description', property: 'og:description', content: description },
-            { hid: 'twitter:card', property: 'twitter:card', content: 'summary_large_image' },
+            { hid: 'twitter:card', property: 'twitter:card', content: 'summary' },
             { hid: 'twitter:site', property: 'twitter:site', content: '@' },
             { hid: 'twitter:creator', property: 'twitter:creator', content: '@' },
             { hid: 'google-site-verification', name: 'google-site-verification', content: '' },

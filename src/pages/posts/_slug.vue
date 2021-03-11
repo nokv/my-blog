@@ -29,8 +29,8 @@ export default Vue.extend({
         };
     },
     head() {
-        const title: string = this.$data.post.title;
-        const description: string = this.$data.post.description;
+        const title: string = this.post.title;
+        const description: string = this.post.description;
         const url = process.env.URL + this.$route.path;
 
         return {
