@@ -1,8 +1,12 @@
 <template>
     <article class="post">
         <header class="post__header">
-            <h1 class="post__title">{{ post.title }}</h1>
-            <time class="post__date" :datetime="post.date">{{ formatDate(post.date) }}</time>
+            <h1 class="post__title">
+                {{ post.title }}
+            </h1>
+            <time class="post__date" :datetime="post.date">
+                {{ formatDate(post.date) }}
+            </time>
         </header>
 
         <section class="post__body">
@@ -14,6 +18,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { PostType } from '~/types/posts';
+import { formatDate } from '~/utils/date/formatDate';
 
 export default Vue.extend({
     async asyncData({ $content, params }) {
@@ -36,9 +41,17 @@ export default Vue.extend({
         return {
             title,
             meta: [
-                { hid: 'description', name: 'description', content: description },
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: description,
+                },
                 { hid: 'og:title', property: 'og:title', content: title },
-                { hid: 'og:description', property: 'og:description', content: description },
+                {
+                    hid: 'og:description',
+                    property: 'og:description',
+                    content: description,
+                },
                 { hid: 'og:url', property: 'og:url', content: url },
             ],
             link: [{ hid: 'canonical', rel: 'canonical', href: url }],
@@ -46,7 +59,7 @@ export default Vue.extend({
     },
     methods: {
         formatDate(date: string): string {
-            return new Date(date).toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric' });
+            return formatDate(date);
         },
     },
 });

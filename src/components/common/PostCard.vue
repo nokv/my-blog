@@ -1,8 +1,12 @@
 <template>
     <article class="post-card">
-        <time class="post-card__date" :datetime="date">{{ formatDate(date) }}</time>
+        <time class="post-card__date" :datetime="date">
+            {{ formatDate(date) }}
+        </time>
         <nuxt-link :to="getPostPath()" class="post-card__link">
-            <h2 class="post-card__title">{{ title }}</h2>
+            <h2 class="post-card__title">
+                {{ title }}
+            </h2>
         </nuxt-link>
     </article>
 </template>
@@ -11,6 +15,7 @@
 import Vue from 'vue';
 import { Routes } from '~/types/route-type';
 import { getRouteWithParams } from '~/services/routes';
+import { formatDate } from '~/utils/date/formatDate';
 
 export default Vue.extend({
     props: {
@@ -29,10 +34,12 @@ export default Vue.extend({
     },
     methods: {
         formatDate(date: string): string {
-            return new Date(date).toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric' });
+            return formatDate(date);
         },
         getPostPath() {
-            return getRouteWithParams<typeof Routes.POST>('POST', { slug: this.slug });
+            return getRouteWithParams<typeof Routes.POST>('POST', {
+                slug: this.slug,
+            });
         },
     },
 });

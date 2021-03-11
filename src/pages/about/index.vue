@@ -9,9 +9,14 @@
             <ul class="sns__list">
                 <li class="sns__item">
                     <p class="sns__name">GitHub:</p>
-                    <a class="sns__link" href="http://github.com/nokv" target="_blank" rel="noopener noreferrer"
-                        >@nokv</a
+                    <a
+                        class="sns__link"
+                        href="http://github.com/nokv"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
+                        @nokv
+                    </a>
                 </li>
             </ul>
         </section>
