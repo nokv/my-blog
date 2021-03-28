@@ -9,7 +9,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import ThePosts from '~/components/common/ThePosts.vue';
-import { PostType } from '~/types/posts';
+import type { PostType } from '~/types/posts';
 
 export default Vue.extend({
     components: {

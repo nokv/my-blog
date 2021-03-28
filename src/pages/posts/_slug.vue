@@ -17,7 +17,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { PostType } from '~/types/posts';
+import type { PostType } from '~/types/posts';
 import { formatDate } from '~/utils/date/formatDate';
 
 export default Vue.extend({
