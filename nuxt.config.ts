@@ -6,7 +6,8 @@ import { config as dotenvConfig } from 'dotenv';
 const envPath = `env/.env.${process.env.NODE_ENV || 'development'}`;
 dotenvConfig({ path: envPath });
 
-const environment = process.env.NODE_ENV || 'development';
+type NodeEnvType = 'development' | 'staging' | 'production';
+const environment = (process.env.NODE_ENV || 'development') as NodeEnvType;
 const isDev = environment === 'development';
 
 // meta
@@ -158,6 +159,7 @@ const config: NuxtConfig = {
     },
 
     content: {
+        fullTextSearchFields: ['title', 'description', 'slug', 'text', 'tag'],
         markdown: {
             prism: {
                 theme: 'prism-themes/themes/prism-nord.css',

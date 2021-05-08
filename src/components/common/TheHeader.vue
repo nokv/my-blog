@@ -16,13 +16,18 @@
                         </nuxt-link>
                     </li>
                     <li class="header__link-item">
+                        <nuxt-link
+                            :to="Routes.POST_SEARCH"
+                            class="header__link"
+                        >
+                            search
+                        </nuxt-link>
+                    </li>
+                    <li class="header__link-item">
                         <nuxt-link :to="Routes.ABOUT" class="header__link">
                             about
                         </nuxt-link>
                     </li>
-                    <!-- <li class="header__link-item">
-                        <nuxt-link :to="Routes.POST_SEARCH" class="header__link">search</nuxt-link>
-                    </li> -->
                 </ul>
             </nav>
         </div>

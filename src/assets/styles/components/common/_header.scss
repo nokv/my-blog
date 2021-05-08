@@ -33,6 +33,10 @@
     }
     &__nav {
         width: auto;
+
+        @include mq-mobile {
+            margin: 0 0 0 auto;
+        }
     }
     &__link-list {
         display: grid;

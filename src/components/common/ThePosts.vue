@@ -1,11 +1,11 @@
 <template>
-    <section class="posts">
+    <section v-if="posts.length" class="posts">
         <PostCard
-            v-for="(article, index) in posts"
+            v-for="(post, index) in posts"
             :key="index"
-            :title="article.title"
-            :date="article.date"
-            :slug="article.slug"
+            :title="post.title"
+            :date="post.date"
+            :slug="post.slug"
         />
     </section>
 </template>
