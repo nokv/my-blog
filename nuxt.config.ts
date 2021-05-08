@@ -141,6 +141,7 @@ const config: NuxtConfig = {
         '@nuxtjs/style-resources',
         '@nuxt/content',
         '@nuxtjs/gtm',
+        '@nuxtjs/sitemap',
     ],
 
     gtm: {
@@ -165,6 +166,10 @@ const config: NuxtConfig = {
                 theme: 'prism-themes/themes/prism-nord.css',
             },
         },
+    },
+
+    sitemap: {
+        hostname: process.env.URL,
     },
 
     // PWA config
@@ -242,6 +247,9 @@ const config: NuxtConfig = {
             },
         },
         babel: {
+            plugins: [
+                ['@babel/plugin-proposal-private-methods', { loose: true }],
+            ],
             presets({ isServer }) {
                 return [
                     [
@@ -249,7 +257,7 @@ const config: NuxtConfig = {
                         {
                             buildTarget: isServer ? 'server' : 'client',
                             useBuiltIns: 'usage',
-                            corejs: { version: '3.9' },
+                            corejs: { version: '3.12' },
                         },
                     ],
                 ];
