@@ -2,6 +2,7 @@ import type { NuxtConfig } from '@nuxt/types';
 import Sass from 'sass';
 import Fiber from 'fibers';
 import { config as dotenvConfig } from 'dotenv';
+import { $content } from '@nuxt/content';
 
 const envPath = `env/.env.${process.env.NODE_ENV || 'development'}`;
 dotenvConfig({ path: envPath });
@@ -170,6 +171,12 @@ const config: NuxtConfig = {
 
     sitemap: {
         hostname: process.env.URL,
+        async routes() {
+            const files = await $content('posts').only(['path']).fetch();
+            return files.map((file: any) =>
+                file.path === '/index' ? '/' : file.path
+            );
+        },
     },
 
     // PWA config
